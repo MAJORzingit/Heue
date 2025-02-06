@@ -1,7 +1,12 @@
 -- ══════════════════════════════════════
 --               Core				
 -- ══════════════════════════════════════
-local Find = function(Table) for i, v in pairs(Table or {}) do if typeof(v) == 'table' then return v end; end; end
+local Find = function(Table) 
+    for i, v in pairs(Table or {}) do 
+        if typeof(v) == 'table' then return v end 
+    end 
+end
+
 local Options = Find(({...})) or {
 	Keybind = 'Home',
 
@@ -10,13 +15,14 @@ local Options = Find(({...})) or {
 		Words = 'pt-br'
 	},
 
-	Experiments = { },
+	Experiments = {},
 
 	Tempo = 1, 0,
 	Rainbow = true,
 }
+
 local Version = '1.5'
-local Parent = gethui() or game:GetService('CoreGui');
+local Parent = gethui() or game:GetService('CoreGui')
 local require = function(Name)
 	return loadstring(game:HttpGet(('https://raw.githubusercontent.com/thzx7hz/AutoJJs/main/%s.lua'):format(Name)))()
 end
@@ -28,9 +34,19 @@ local TweenService = game:GetService('TweenService')
 local Players = game:GetService('Players')
 local LP = Players.LocalPlayer
 
--- Funções de interface
-local function SetInterfaceColors()
-	TweenService:Create(UIElements["Slide"], TweenInfo.new(0.3), { BackgroundColor3 = Color3.fromRGB(211, 211, 211) }):Play() -- Cinza claro
-end
+-- ══════════════════════════════════════
+--              Modules				
+-- ══════════════════════════════════════
+local UI = require("UI")
+local Notification = require("Notification")
+local Extenso = require("Modules/Extenso")
+local Character = require("Modules/Character")
+local RemoteChat = require("Modules/RemoteChat")
+local Request = require("Modules/Request")
 
-SetInterfaceColors()
+-- ══════════════════════════════════════
+--  	        Constants				
+-- ══════════════════════════════════════
+local Char = Character.new(LP)
+local UIElements = UI.UIElements
+-- O restante permanece inalterado...
