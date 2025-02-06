@@ -12,7 +12,7 @@ local Options = Find(({...})) or {
 
 	Experiments = { },
 
-	Tempo = 0,3,
+	Tempo = 0,7,
 	Rainbow = false,
 }
 local Version = '1.5'
