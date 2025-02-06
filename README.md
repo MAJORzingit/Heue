@@ -12,8 +12,8 @@ local Options = Find(({...})) or {
 
 	Experiments = { },
 
-	Tempo = 0,7,
-	Rainbow = false,
+	Tempo = 1,0,
+	Rainbow = true,
 }
 local Version = '1.5'
 local Parent = gethui() or game:GetService('CoreGui');
